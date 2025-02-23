@@ -23,3 +23,5 @@ C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmLe
 C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmHoliday.resources
 C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmRates.resources
 C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmVoluntary.resources
+C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmAssociates.resources
+C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmAddAssociates.resources

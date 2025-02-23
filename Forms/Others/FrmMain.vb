@@ -29,4 +29,8 @@ Public Class FrmMain
             MessageBox.Show("Error:" & ex.Message)
         End Try
     End Sub
+
+    Private Sub BtnAssociate_Click(sender As Object, e As EventArgs) Handles BtnAssociate.Click
+        DisplayFormPanel(FrmAssociates, panelDisplay)
+    End Sub
 End Class

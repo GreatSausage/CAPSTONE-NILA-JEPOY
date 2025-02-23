@@ -98,6 +98,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Associates\FrmAddAssociates.Designer.vb">
+      <DependentUpon>FrmAddAssociates.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Associates\FrmAddAssociates.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Associates\FrmAssociates.Designer.vb">
+      <DependentUpon>FrmAssociates.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Associates\FrmAssociates.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Maintenance\FrmDepartment.Designer.vb">
       <DependentUpon>FrmDepartment.vb</DependentUpon>
     </Compile>
@@ -166,6 +178,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Associates\FrmAddAssociates.resx">
+      <DependentUpon>FrmAddAssociates.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Associates\FrmAssociates.resx">
+      <DependentUpon>FrmAssociates.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Maintenance\FrmDepartment.resx">
       <DependentUpon>FrmDepartment.vb</DependentUpon>
     </EmbeddedResource>

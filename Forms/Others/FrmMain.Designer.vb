@@ -36,6 +36,7 @@ Partial Class FrmMain
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.BtnMaintenance = New Guna.UI2.WinForms.Guna2Button()
         Me.panelDisplay = New System.Windows.Forms.Panel()
+        Me.BtnAssociate = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel1.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -159,6 +160,7 @@ Partial Class FrmMain
         'Panel8
         '
         Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.Panel8.Controls.Add(Me.BtnAssociate)
         Me.Panel8.Controls.Add(Me.BtnMaintenance)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(0, 154)
@@ -192,6 +194,24 @@ Partial Class FrmMain
         Me.panelDisplay.Name = "panelDisplay"
         Me.panelDisplay.Size = New System.Drawing.Size(1498, 595)
         Me.panelDisplay.TabIndex = 8
+        '
+        'BtnAssociate
+        '
+        Me.BtnAssociate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnAssociate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnAssociate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnAssociate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnAssociate.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnAssociate.FillColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.BtnAssociate.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAssociate.ForeColor = System.Drawing.Color.White
+        Me.BtnAssociate.Location = New System.Drawing.Point(180, 0)
+        Me.BtnAssociate.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnAssociate.Name = "BtnAssociate"
+        Me.BtnAssociate.Size = New System.Drawing.Size(180, 49)
+        Me.BtnAssociate.TabIndex = 4
+        Me.BtnAssociate.Text = "Associates"
+        Me.BtnAssociate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'FrmMain
         '
@@ -227,4 +247,5 @@ Partial Class FrmMain
     Friend WithEvents Panel8 As Panel
     Friend WithEvents BtnMaintenance As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents panelDisplay As Panel
+    Friend WithEvents BtnAssociate As Guna.UI2.WinForms.Guna2Button
 End Class
