@@ -33,4 +33,12 @@ Public Class FrmMain
     Private Sub BtnAssociate_Click(sender As Object, e As EventArgs) Handles BtnAssociate.Click
         DisplayFormPanel(FrmAssociates, panelDisplay)
     End Sub
+
+    Private Sub BtnDepartment_Click(sender As Object, e As EventArgs) Handles BtnDepartment.Click
+        DisplayFormPanel(FrmDepartments, panelDisplay)
+    End Sub
+
+    Private Sub BtnPayrollCalculation_Click(sender As Object, e As EventArgs) Handles BtnPayrollCalculation.Click
+        DisplayFormPanel(FrmCalculation, panelDisplay)
+    End Sub
 End Class

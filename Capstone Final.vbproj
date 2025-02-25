@@ -110,6 +110,30 @@
     <Compile Include="Forms\Associates\FrmAssociates.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Calculations\FrmCalculation.Designer.vb">
+      <DependentUpon>FrmCalculation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculations\FrmCalculation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Calculations\FrmPayrollPeriod.Designer.vb">
+      <DependentUpon>FrmPayrollPeriod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Calculations\FrmPayrollPeriod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Departments\FrmDepartments.Designer.vb">
+      <DependentUpon>FrmDepartments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Departments\FrmDepartments.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Departments\FrmSetDepartmentHead.Designer.vb">
+      <DependentUpon>FrmSetDepartmentHead.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Departments\FrmSetDepartmentHead.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Maintenance\FrmDepartment.Designer.vb">
       <DependentUpon>FrmDepartment.vb</DependentUpon>
     </Compile>
@@ -185,6 +209,18 @@
     <EmbeddedResource Include="Forms\Associates\FrmAssociates.resx">
       <DependentUpon>FrmAssociates.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculations\FrmCalculation.resx">
+      <DependentUpon>FrmCalculation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Calculations\FrmPayrollPeriod.resx">
+      <DependentUpon>FrmPayrollPeriod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Departments\FrmDepartments.resx">
+      <DependentUpon>FrmDepartments.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Departments\FrmSetDepartmentHead.resx">
+      <DependentUpon>FrmSetDepartmentHead.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Maintenance\FrmDepartment.resx">
       <DependentUpon>FrmDepartment.vb</DependentUpon>
     </EmbeddedResource>
@@ -250,5 +286,6 @@
       <DependentUpon>dbmcpms.mdf</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

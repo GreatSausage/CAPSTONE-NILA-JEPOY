@@ -25,3 +25,7 @@ C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmRa
 C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmVoluntary.resources
 C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmAssociates.resources
 C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmAddAssociates.resources
+C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmDepartments.resources
+C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmSetDepartmentHead.resources
+C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmCalculation.resources
+C:\Users\Clifford\Desktop\Capstone\Capstone Final\obj\Debug\Capstone_Final.FrmPayrollPeriod.resources
