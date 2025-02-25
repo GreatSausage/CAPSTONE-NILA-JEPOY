@@ -58,17 +58,18 @@ Partial Class FrmAddAssociates
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.DGVoluntary = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.DgLeave = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.leaveID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.leaveStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.leaveType = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.voluntaryID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.voluntaryStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.voluntaryName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.DgLeave = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.leaveID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.leaveStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.leaveType = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.leaveCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -537,6 +538,40 @@ Partial Class FrmAddAssociates
         Me.DGVoluntary.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGVoluntary.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'voluntaryID
+        '
+        Me.voluntaryID.DataPropertyName = "voluntaryID"
+        Me.voluntaryID.HeaderText = "Voluntary ID"
+        Me.voluntaryID.MinimumWidth = 6
+        Me.voluntaryID.Name = "voluntaryID"
+        Me.voluntaryID.ReadOnly = True
+        Me.voluntaryID.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'voluntaryStatus
+        '
+        Me.voluntaryStatus.DataPropertyName = "status"
+        Me.voluntaryStatus.HeaderText = "Status"
+        Me.voluntaryStatus.Name = "voluntaryStatus"
+        Me.voluntaryStatus.ReadOnly = True
+        Me.voluntaryStatus.Visible = False
+        '
+        'voluntaryName
+        '
+        Me.voluntaryName.DataPropertyName = "voluntaryName"
+        Me.voluntaryName.HeaderText = "Name"
+        Me.voluntaryName.MinimumWidth = 8
+        Me.voluntaryName.Name = "voluntaryName"
+        Me.voluntaryName.ReadOnly = True
+        Me.voluntaryName.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'amount
+        '
+        Me.amount.HeaderText = "Amount"
+        Me.amount.MaxInputLength = 6
+        Me.amount.MinimumWidth = 8
+        Me.amount.Name = "amount"
+        Me.amount.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
         'Label7
         '
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Top
@@ -572,7 +607,7 @@ Partial Class FrmAddAssociates
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DgLeave.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgLeave.ColumnHeadersHeight = 40
-        Me.DgLeave.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.leaveID, Me.leaveStatus, Me.leaveType})
+        Me.DgLeave.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.leaveID, Me.leaveStatus, Me.leaveType, Me.leaveCount})
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -613,24 +648,6 @@ Partial Class FrmAddAssociates
         Me.DgLeave.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgLeave.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'leaveID
-        '
-        Me.leaveID.DataPropertyName = "leaveID"
-        Me.leaveID.HeaderText = "Leave ID"
-        Me.leaveID.Name = "leaveID"
-        '
-        'leaveStatus
-        '
-        Me.leaveStatus.DataPropertyName = "status"
-        Me.leaveStatus.HeaderText = "Status"
-        Me.leaveStatus.Name = "leaveStatus"
-        '
-        'leaveType
-        '
-        Me.leaveType.DataPropertyName = "leaveType"
-        Me.leaveType.HeaderText = "Leave"
-        Me.leaveType.Name = "leaveType"
-        '
         'Label10
         '
         Me.Label10.Dock = System.Windows.Forms.DockStyle.Top
@@ -642,39 +659,31 @@ Partial Class FrmAddAssociates
         Me.Label10.Text = "Manage Leave"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'voluntaryID
+        'leaveID
         '
-        Me.voluntaryID.DataPropertyName = "voluntaryID"
-        Me.voluntaryID.HeaderText = "Voluntary ID"
-        Me.voluntaryID.MinimumWidth = 6
-        Me.voluntaryID.Name = "voluntaryID"
-        Me.voluntaryID.ReadOnly = True
-        Me.voluntaryID.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.leaveID.DataPropertyName = "leaveID"
+        Me.leaveID.HeaderText = "Leave ID"
+        Me.leaveID.Name = "leaveID"
+        Me.leaveID.ReadOnly = True
         '
-        'voluntaryStatus
+        'leaveStatus
         '
-        Me.voluntaryStatus.DataPropertyName = "status"
-        Me.voluntaryStatus.HeaderText = "Status"
-        Me.voluntaryStatus.Name = "voluntaryStatus"
-        Me.voluntaryStatus.ReadOnly = True
-        Me.voluntaryStatus.Visible = False
+        Me.leaveStatus.DataPropertyName = "status"
+        Me.leaveStatus.HeaderText = "Status"
+        Me.leaveStatus.Name = "leaveStatus"
+        Me.leaveStatus.ReadOnly = True
         '
-        'voluntaryName
+        'leaveType
         '
-        Me.voluntaryName.DataPropertyName = "voluntaryName"
-        Me.voluntaryName.HeaderText = "Name"
-        Me.voluntaryName.MinimumWidth = 8
-        Me.voluntaryName.Name = "voluntaryName"
-        Me.voluntaryName.ReadOnly = True
-        Me.voluntaryName.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.leaveType.DataPropertyName = "leaveType"
+        Me.leaveType.HeaderText = "Leave"
+        Me.leaveType.Name = "leaveType"
+        Me.leaveType.ReadOnly = True
         '
-        'amount
+        'leaveCount
         '
-        Me.amount.HeaderText = "Amount"
-        Me.amount.MaxInputLength = 6
-        Me.amount.MinimumWidth = 8
-        Me.amount.Name = "amount"
-        Me.amount.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.leaveCount.HeaderText = "Count"
+        Me.leaveCount.Name = "leaveCount"
         '
         'FrmAddAssociates
         '
@@ -738,11 +747,12 @@ Partial Class FrmAddAssociates
     Friend WithEvents Panel11 As Panel
     Friend WithEvents BtnSaveAssociate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents leaveID As DataGridViewTextBoxColumn
-    Friend WithEvents leaveStatus As DataGridViewTextBoxColumn
-    Friend WithEvents leaveType As DataGridViewTextBoxColumn
     Friend WithEvents voluntaryID As DataGridViewTextBoxColumn
     Friend WithEvents voluntaryStatus As DataGridViewTextBoxColumn
     Friend WithEvents voluntaryName As DataGridViewTextBoxColumn
     Friend WithEvents amount As DataGridViewTextBoxColumn
+    Friend WithEvents leaveID As DataGridViewTextBoxColumn
+    Friend WithEvents leaveStatus As DataGridViewTextBoxColumn
+    Friend WithEvents leaveType As DataGridViewTextBoxColumn
+    Friend WithEvents leaveCount As DataGridViewTextBoxColumn
 End Class

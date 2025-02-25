@@ -8,7 +8,7 @@ Module MdlAssociate
     Private Function GenerateEmployeeNumber() As String
         Dim currentYear As String = DateTime.Now.Year.ToString()
         Dim newNumber As Integer = 1
-        Dim lastEmployeeNumber As String = ""
+        Dim lastEmployeeNumber As String
 
         Dim command As New MySqlCommand("SELECT employeeNumber FROM tblEmployee WHERE employeeNumber LIKE @year ORDER BY employeeNumber DESC LIMIT 1", FrmMain.conn)
         command.Parameters.AddWithValue("@year", currentYear & "%")
@@ -35,6 +35,7 @@ Module MdlAssociate
         Dim newEmployeeNumber As String = GenerateEmployeeNumber()
         Dim position As String = GetPositionName(positionID)
 
+        'if may department head na
         If position = "Department Head" Then
             Dim checkHeadCommand As New MySqlCommand("SELECT COUNT(*) FROM tblEmployee WHERE departmentID = @departmentID AND positionID = @positionID", FrmMain.conn)
             With checkHeadCommand.Parameters
@@ -43,7 +44,6 @@ Module MdlAssociate
             End With
             Dim existingHeads As Integer = Convert.ToInt32(checkHeadCommand.ExecuteScalar())
 
-            ' If a department head already exists, prevent adding another
             If existingHeads > 0 Then
                 MessageBox.Show("An employee already exists for this position in this department.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
@@ -93,6 +93,20 @@ Module MdlAssociate
             voluntaryCommand.ExecuteNonQuery()
         Next
 
+        For Each row As DataGridViewRow In FrmAddAssociates.DgLeave.Rows()
+            Dim leaveID As Integer = row.Cells("leaveID").Value
+            Dim count As Integer = If(String.IsNullOrEmpty(row.Cells("leaveCount").Value), 0, row.Cells("leaveCount").Value)
+
+            Dim leaveCommand As New MySqlCommand("INSERT INTO tblempleave (leaveID, employeeID, leaveCount) VALUES (@leaveID, @employeeID, @leaveCount)", FrmMain.conn)
+            With leaveCommand.Parameters
+                .AddWithValue("@leaveID", leaveID)
+                .AddWithValue("@employeeID", employeeID)
+                .AddWithValue("@leaveCount", count)
+            End With
+
+            leaveCommand.ExecuteNonQuery()
+        Next
+
         MessageBox.Show("Employee added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
@@ -118,6 +132,21 @@ Module MdlAssociate
         Return datatable
     End Function
 
+    Public Function DisplayActiveVoluntary() As DataTable
+        Dim command As New MySqlCommand("SELECT * FROM tblVoluntary WHERE status LIKE 'Active'", FrmMain.conn)
+        Dim adapter As New MySqlDataAdapter(command)
+        Dim datatable As New DataTable
+        adapter.Fill(datatable)
+        Return datatable
+    End Function
+
+    Public Function DisplayActiveLeave() As DataTable
+        Dim command As New MySqlCommand("SELECT * FROM tblLeave WHERE status LIKE 'Active'", FrmMain.conn)
+        Dim adapter As New MySqlDataAdapter(command)
+        Dim datatable As New DataTable
+        adapter.Fill(datatable)
+        Return datatable
+    End Function
 
     Public Function DisplayAllEmployees() As DataTable
         Dim command As New MySqlCommand("SELECT a.employeeID, a.employeeNumber, a.rfidNumber, CONCAT(a.firstName, ' ', a.lastName) AS Fullname, d.departmentName, p.positionName, a.status 

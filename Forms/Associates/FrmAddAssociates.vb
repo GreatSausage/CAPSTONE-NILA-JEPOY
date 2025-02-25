@@ -4,7 +4,8 @@
     End Sub
 
     Private Sub FrmAddAssociates_Load(sender As Object, e As EventArgs) Handles Me.Load
-        DGVoluntary.DataSource = DisplayAllVoluntary()
+        DGVoluntary.DataSource = DisplayActiveVoluntary()
+        DgLeave.DataSource = DisplayActiveLeave()
 
         CbDepartment.DataSource = DisplayActiveDepartment()
         CbDepartment.DisplayMember = "departmentName"
